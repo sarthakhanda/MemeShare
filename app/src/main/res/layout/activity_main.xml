@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/memeImageView"
         android:layout_width="0dp"
-        android:background="@color/colorPrimaryDark"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/shareButton"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/darkMode"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,11 +31,11 @@
         android:id="@+id/shareButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/commonColor"
         android:onClick="shareMeme"
         android:padding="32dp"
         android:text="@string/share"
         android:textColor="@color/black"
-        android:background="@color/commonColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="@id/guideline" />
@@ -42,12 +43,12 @@
     <Button
         android:id="@+id/nextButton"
         android:layout_width="0dp"
-        android:background="@color/commonColor"
-        android:textColor="@color/black"
         android:layout_height="wrap_content"
+        android:background="@color/commonColor"
         android:onClick="nextMeme"
         android:padding="32dp"
         android:text="@string/next"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/guideline"
         app:layout_constraintRight_toRightOf="parent" />
@@ -58,5 +59,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <ImageButton
+        android:id="@+id/darkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="darkMode"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_brightness_medium_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

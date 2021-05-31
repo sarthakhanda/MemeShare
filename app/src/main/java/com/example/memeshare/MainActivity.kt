@@ -80,4 +80,9 @@ class MainActivity : AppCompatActivity() {
     fun nextMeme(view: View) {
         loadMeme()
     }
+
+    fun darkMode(view: View) {
+        val intent = Intent(this, DarkModeActivity::class.java)
+        startActivity(intent)
+    }
 }
