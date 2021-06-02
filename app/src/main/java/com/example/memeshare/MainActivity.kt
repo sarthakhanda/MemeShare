@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         // Request a string response from the provided URL.
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
-            Response.Listener { response ->
+            { response ->
                 currentImageUrl = response.getString("url")
                 Glide.with(this).load(currentImageUrl).listener(object: RequestListener<Drawable> {
                     override fun onLoadFailed(
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }).into(memeImageView)
             },
-            Response.ErrorListener {
+            {
                 Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show()
             })
 
